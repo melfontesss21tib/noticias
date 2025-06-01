@@ -45,6 +45,7 @@ header button {
     border: none;
     background: none;
     width: fit-content;
+    cursor: pointer;
 }
 
 header nav.mobile {
@@ -55,7 +56,7 @@ header nav.mobile {
     height: 100vh;
     width: 16rem;
     z-index: 999;
-    
+
     display: flex;
     flex-direction: column;
     padding: 1.5rem;
@@ -78,6 +79,10 @@ header .mobile a {
     color: var(--dark-blue);
     font-size: 1.125rem;
     line-height: 1.5rem;
+}
+
+header .desktop {
+    display: none;
 }
 
 main {
@@ -112,7 +117,7 @@ main {
 .primeira-secao button {
 
     padding: 0.75rem 2rem;
-    background-color:var(--vermillion) ;
+    background-color: var(--vermillion);
     border: none;
     text-transform: uppercase;
     color: var(--almost-white);
@@ -155,7 +160,7 @@ main {
     line-height: 1.625rem;
 }
 
-.terceira-secao > div {
+.terceira-secao>div {
     display: flex;
     align-items: center;
     gap: 1.5rem;
@@ -180,14 +185,38 @@ main {
     margin-block: 0.6rem;
 }
 
+.terceira-secao a {
+    text-decoration: none;
+}
+
 .terceira-secao p {
     font-size: 0.9375rem;
     line-height: 1.625rem;
     color: var(--gunmetal);
-    
+
 }
 
-@media(min-width: 1110px ) {
+@media(min-width: 1110px) {
+
+    header>button {
+        display: none;
+    }
+
+    header .desktop {
+        display: flex;
+        gap: 2.5rem;
+    }
+
+    header .desktop a {
+        font-size: 0.9375rem;
+        line-height: 1.625rem;
+        text-decoration: none;
+        color: var(--gunmetal);
+    }
+
+    header .desktop a:hover {
+        color: var(--vermillion);
+    }
 
     main {
         display: grid;
@@ -215,23 +244,21 @@ main {
         font-size: 3.5rem;
     }
 
-     .segunda-secao h2 {
+    .primeira-secao button:hover {
+        background-color: var(--dark-blue);
+        cursor: pointer;
+    }
+
+    .segunda-secao h2 {
         font-size: 2.5rem;
     }
 
-    header > button {
-        display: none;
+    .terceira-secao {
+        display: flex;
+        grid-column: 1 / 4;
     }
-}
 
-header .desktop {
-    display: flex;
-    gap: 2.5rem;
-}
-
-header .desktop a {
-    font-size: 0.9375rem;
-    line-height: 1.625rem;
-    text-decoration: none;
-    color: var(--gunmetal);
+    .terceira-secao h2:hover {
+        color: var(--vermillion);
+    }
 }
